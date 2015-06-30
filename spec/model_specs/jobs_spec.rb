@@ -24,7 +24,7 @@ describe "get_jobs class method" do
     expect(github_response.length).to eq 7
   end
 
-  it "should not contain an empty arrays in the array returned" do
+  it "should not contain any empty arrays in the array returned" do
     expect(github_response.include?([])).to eq false
   end
 end
