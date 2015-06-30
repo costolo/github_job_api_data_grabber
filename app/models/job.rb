@@ -3,8 +3,8 @@ class Job < ActiveRecord::Base
 
   def self.get_jobs
     jobs = []
-    url = 'https://jobs.github.com/positions.json?location='
-    cities = ['san+francisco', 'new+york', 'boston', 'boulder', 'chicago', 'los+angeles', 'denver']
+    url = "https://jobs.github.com/positions.json?location="
+    cities = ["san+francisco", "new+york", "boston", "boulder", "chicago", "los+angeles", "denver"]
     cities.each do |city|
       github_response = HTTParty.get(url + city)
       while github_response.parsed_response == []
