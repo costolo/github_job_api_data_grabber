@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :location, :description
 
   def self.get_jobs
-    jobs = []
+    jobs_arr = []
     url = "https://jobs.github.com/positions.json?location="
     cities = ["san+francisco", "new+york", "boston", "boulder", "chicago", "los+angeles", "denver"]
     cities.each do |city|
