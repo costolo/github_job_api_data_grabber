@@ -28,3 +28,9 @@ describe "get_jobs class method" do
     expect(github_response.include?([])).to eq false
   end
 end
+
+describe "format_frequencies class method" do
+  it "should return a float" do
+    expect(Job.format_frequency("java", "new york").class).to be Float
+  end
+end
