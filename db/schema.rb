@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630143206) do
+ActiveRecord::Schema.define(version: 20150630190647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "cities", force: :cascade do |t|
+    t.string  "name"
+    t.integer "number_of_jobs"
+    t.hstore  "frequency",      default: {"c#"=>"0", "c++"=>"0", "php"=>"0", "java"=>"0", "ruby"=>"0", "scala"=>"0", "python"=>"0", "javascript"=>"0", "objective-c"=>"0"}
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string   "location",    null: false
