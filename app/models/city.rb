@@ -1,2 +1,2 @@
 class City < ActiveRecord::Base
-end
+  LANGUAGES = ["c#", "c++", "php", "java", "ruby", "scala", "python", "javascript", "objective-c"]
