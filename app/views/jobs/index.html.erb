@@ -1,6 +1,6 @@
 <% if Job.all.length != 0 %>
   <% @cities.each do |city| %>
-    <h1><%= city %> </h1>
+    <h1><%= city %>:</h1>
     <ul>
     <% @languages.each do |lang| %>
       <% freq = Job.format_frequency(lang, city) %>
