@@ -1,0 +1,12 @@
+<% @cities.each do |city| %>
+  <h1><%= city %> </h1>
+  <ul>
+  <% @languages.each do |lang| %>
+    <li>
+      <%= "- " + lang + ": " + Job.format_frequency(lang, city) + "%" %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<p>Index of <%= Job.all.length %> jobs.</p>
