@@ -14,3 +14,13 @@ class Job < ActiveRecord::Base
     end
     jobs
   end
+
+  def self.save_jobs
+    job_city_collection = Job.get_jobs
+    job_city_collection.each do |collection|
+      collection.each do |job|
+        Job.create(location: job["location"], description: job["description"])
+      end
+    end
+  end
+end
