@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
   validates_presence_of :location, :description
 
   def self.get_jobs
-    @jobs = []
+    jobs = []
     url = 'https://jobs.github.com/positions.json?location='
     cities = ['san+francisco', 'new+york', 'boston', 'boulder', 'chicago', 'los+angeles', 'denver']
     cities.each do |city|
@@ -10,7 +10,8 @@ class Job < ActiveRecord::Base
       while github_response.parsed_response == []
         github_response = HTTParty.get(url + city)
       end
-      @jobs << github_response
+      jobs << github_response
     end
+    jobs
   end
 end
