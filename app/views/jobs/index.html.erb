@@ -12,9 +12,8 @@
     <% end %>
     </ul>
   <% end %>
-
   <p>Index of <%= Job.all.length %> jobs.</p>
 <% else %>
   <% Job.save_jobs %>
-  <p>Refresh to see job frequencies across different cities</p>
+  <p>Refresh to see language frequencies of jobs across different cities</p>
 <% end %>
