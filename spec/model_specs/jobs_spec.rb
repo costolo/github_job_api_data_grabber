@@ -29,7 +29,7 @@ describe "get_jobs class method" do
   end
 end
 
-describe "format_frequencies class method" do
+describe "format_frequency class method" do
   it "should return a float" do
     expect(Job.format_frequency("java", "new york").class).to be Float
   end
