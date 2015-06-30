@@ -10,9 +10,9 @@ class Job < ActiveRecord::Base
       while github_response.parsed_response == []
         github_response = HTTParty.get(url + city)
       end
-      jobs << github_response.parsed_response
+      jobs_arr << github_response.parsed_response
     end
-    jobs
+    jobs_arr
   end
 
   def self.save_jobs
