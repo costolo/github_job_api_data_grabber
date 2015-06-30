@@ -23,4 +23,10 @@ class Job < ActiveRecord::Base
       end
     end
   end
+
+  def self.format_frequency(lang, city)
+    num_of_jobs = Job.where('LOWER(description) LIKE ? AND LOWER(location) LIKE ?', "%#{lang}%", "%#{city}%").length.to_f
+    freq = num_of_jobs/Job.where("LOWER(location) LIKE ?", "%#{city}%").length
+    return (freq.round(2)*100).to_s
+  end
 end
