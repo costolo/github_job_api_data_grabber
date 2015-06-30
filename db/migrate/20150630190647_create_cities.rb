@@ -5,10 +5,7 @@ class CreateCities < ActiveRecord::Migration
     create_table :cities do |t|
       t.string :name
       t.integer :number_of_jobs
-    end
-
-    add_column :cities, :frequency, :hstore, 
-      default: {
+      t.hstore :frequency, default: {
         "ruby" => 0,
         "python" => 0,
         "c++" => 0,
@@ -19,5 +16,6 @@ class CreateCities < ActiveRecord::Migration
         "objective-c" => 0,
         "c#" => 0
       }
+    end      
   end
 end
